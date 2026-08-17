@@ -28,6 +28,11 @@ const userSchema = new mongoose.Schema({
     password:{ 
         type: String,
         required: true,
+    },
+    
+    profilePicture: {
+        type: String,
+        required: true,
     }
 }, {timestamps: true}); //timestamps is a property and will track when the user is created or last updated time
 
