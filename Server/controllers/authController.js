@@ -48,7 +48,7 @@ export const createOtp = async (req, res) => {
         // return response
         return res.status(200).json({
             success: true,
-            message: "Otp generated successfully.",
+            message: "Otp sent successfully.",
             newOtp,
         });
 

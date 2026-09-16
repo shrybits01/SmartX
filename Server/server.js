@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import dbConnect from "./config/mongoDbConnection.js";
 import userRoute from "./routes/userRoute.js";
+import cors from 'cors';
 
 const app = express(); //calling express and it will create an application named as app
 dotenv.config(); // Port from .env (avoid hardcoding
@@ -10,6 +11,9 @@ const PORT = process.env.PORT || 4000; //if port is not available in env then us
 
 //console.log("User Route Loaded");
 app.use(express.json());
+
+//to enable cross origin communication
+app.use(cors());
 
 //mount route
 app.use("/api/v1", userRoute);
